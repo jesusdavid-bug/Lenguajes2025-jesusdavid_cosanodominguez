@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jesús David Cosano">
+    <title>Propiedad Box-Sizing - CSS</title>
+    <link rel="stylesheet" href="styles/box-sizing.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Propiedad Box-Sizing</h1>
+        <p>Controla cómo se determinan sus dimensiones totales, incluyendo el ancho y la altura.</p>
+
+        <h2>Comparación</h2>
+        <p>Mismo elemento con diferentes valores de box-sizing:</p>
+        <div class="codigo">
+            width: 500px;<br>
+            height: 100px;<br>
+            padding: 10px;<br>
+            border: 20px;
+        </div>
+
+        <div class="comparacion">
+            <div class="comparacion-item">
+                <h3 class="titulo-comparacion">box-sizing: content-box</h3>
+                <div class="caja-demo-content">
+                    Contenido
+                </div>
+                <p class="texto-medida-centrado">
+                    500px + 20px (padding) + 40px (border) = 560px
+                </p>
+                <div class="codigo">
+                    box-sizing: content-box;
+                </div>
+            </div>
+            <div class="comparacion-item">
+                <h3 class="titulo-comparacion">box-sizing: border-box</h3>
+                <div class="caja-demo-border">
+                    Contenido
+                </div>
+                <p class="texto-medida-centrado">
+                    500px (incluye padding y border)
+                </p>
+                <div class="codigo">
+                    box-sizing: border-box;
+                </div>
+            </div>
+        </div>
+
+        <h2>Explicación</h2>
+        <div class="ejemplo-box">
+            <p><strong>content-box (por defecto):</strong></p>
+            <p>El width y height solo incluyen el contenido. El padding y border se suman al tamaño total.</p>
+            <p>Tamaño total = 500px + 20px (padding) + 40px (border) = <strong>560px</strong></p>
+        </div>
+
+        <div class="ejemplo-box">
+            <p><strong>border-box:</strong></p>
+            <p>El width y height incluyen el contenido, padding y border. El tamaño total es el especificado.</p>
+            <p>Tamaño total = <strong>500px</strong> (ya incluye todo)</p>
+        </div>
+    </div>
+</body>
+
+</html>

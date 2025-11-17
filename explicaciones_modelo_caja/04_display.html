@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jesús David Cosano">
+    <title>Propiedad Display - CSS</title>
+    <link rel="stylesheet" href="styles/display.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Propiedad Display</h1>
+        <p>Determina cómo se muestra un elemento en el diseño de una página web. Puede tomar varios valores, cada uno
+            con su propio comportamiento.</p>
+
+        <h2>display: block</h2>
+        <ul>
+            <li>Generan un nuevo bloque de formato, comenzando en una nueva línea</li>
+            <li>Ocupan todo el ancho disponible si no se establece width</li>
+            <li>Se adaptan al alto del contenido si no se establece height</li>
+            <li>Ejemplos de bloque son: párrafos (&lt;p&gt;), encabezados (&lt;h1&gt;-&lt;h6&gt;), divisiones
+                (&lt;div&gt;)</li>
+        </ul>
+        <div class="ejemplo-box">
+            <div class="elemento-block">Elemento Block 1</div>
+            <div class="elemento-block">Elemento Block 2</div>
+            <div class="elemento-block">Elemento Block 3</div>
+        </div>
+        <div class="codigo">
+            display: block;
+        </div>
+
+        <h2>display: inline</h2>
+        <ul>
+            <li>No inician una nueva línea</li>
+            <li>Ocupan el ancho necesario para su contenido</li>
+            <li>No les afecta width o height</li>
+            <li>Ejemplos: enlaces (&lt;a&gt;), imágenes (&lt;img&gt;), etiquetas de formato &lt;b&gt; &lt;em&gt;
+                &lt;i&gt; &lt;sup&gt; &lt;span&gt;</li>
+        </ul>
+        <div class="ejemplo-box">
+            <span class="elemento-inline">Inline 1</span>
+            <span class="elemento-inline">Inline 2</span>
+            <span class="elemento-inline">Inline 3</span>
+            <span class="elemento-inline">Inline 4</span>
+        </div>
+        <div class="codigo">
+            display: inline;
+        </div>
+
+        <h2>display: inline-block</h2>
+        <p>Combina características de block e inline.</p>
+        <div class="ejemplo-box">
+            <span class="elemento-inline-block">Item 1</span>
+            <span class="elemento-inline-block">Item 2</span>
+            <span class="elemento-inline-block">Item 3</span>
+            <span class="elemento-inline-block">Item 4</span>
+        </div>
+        <div class="codigo">
+            display: inline-block;
+        </div>
+
+        <h2>display: none</h2>
+        <p>El elemento no se muestra en absoluto. Es como si el elemento no existiera en el diseño de la página. Esto
+            puede ser útil para ocultar temporalmente elementos.</p>
+        <div class="ejemplo-box">
+            <div class="elemento-block">Elemento visible</div>
+            <div class="elemento-none">Este elemento está oculto (display: none)</div>
+            <div class="elemento-block">Otro elemento visible</div>
+        </div>
+        <div class="codigo">
+            display: none;
+        </div>
+
+        <h2>display: flex</h2>
+        <p>Introduce un modelo de diseño flexible y se utiliza para distribuir el espacio en el diseño entre los
+            elementos hijos de un contenedor.</p>
+        <div class="ejemplo-box">
+            <div class="contenedor-flex">
+                <div class="item-flex">Flex Item 1</div>
+                <div class="item-flex">Flex Item 2</div>
+                <div class="item-flex">Flex Item 3</div>
+                <div class="item-flex">Flex Item 4</div>
+            </div>
+        </div>
+        <div class="codigo">
+            display: flex;
+        </div>
+    </div>
+</body>
+
+</html>

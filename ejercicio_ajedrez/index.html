@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Ajedrez</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tablero de Ajedrez</h1>
+        <p class="author">Por Jesús</p>
+    </header>
+
+    <main>
+        <div class="board-container">
+            <table class="chessboard">
+                <!-- Fila de letras superior -->
+                <tr class="column-labels-top">
+                    <td class="corner-top-left"></td>
+                    <td class="label-letter-top">h</td>
+                    <td class="label-letter-top">g</td>
+                    <td class="label-letter-top">f</td>
+                    <td class="label-letter-top">e</td>
+                    <td class="label-letter-top">d</td>
+                    <td class="label-letter-top">c</td>
+                    <td class="label-letter-top">b</td>
+                    <td class="label-letter-top">a</td>
+                    <td class="corner-top-right"></td>
+                </tr>
+                <!-- Fila 8 (Blancas) -->
+                <tr>
+                    <td class="square-label label-vertical label-top-left">8</td>
+                    <td class="square black"><img src="images/blancas/torreblanca.png" alt="Torre Blanca"></td>
+                    <td class="square white"><img src="images/blancas/caballoblanco.png" alt="Caballo Blanco"></td>
+                    <td class="square black"><img src="images/blancas/alfilblanco.png" alt="Alfil Blanco"></td>
+                    <td class="square white"><img src="images/blancas/reinablanca.png" alt="Reina Blanca"></td>
+                    <td class="square black"><img src="images/blancas/reyblanco.png" alt="Rey Blanco"></td>
+                    <td class="square white"><img src="images/blancas/alfilblanco.png" alt="Alfil Blanco"></td>
+                    <td class="square black"><img src="images/blancas/caballoblanco.png" alt="Caballo Blanco"></td>
+                    <td class="square white"><img src="images/blancas/torreblanca.png" alt="Torre Blanca"></td>
+                    <td class="square-label label-vertical label-top-right">1</td>
+                </tr>
+                <!-- Fila 7 (Peones Blancos) -->
+                <tr>
+                    <td class="square-label label-vertical">7</td>
+                    <td class="square white"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square black"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square white"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square black"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square white"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square black"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square white"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square black"><img src="images/blancas/peonblanco.png" alt="Peón Blanco"></td>
+                    <td class="square-label label-vertical">2</td>
+                </tr>
+                <!-- Fila 6 (Vacía) -->
+                <tr>
+                    <td class="square-label label-vertical">6</td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square-label label-vertical">3</td>
+                </tr>
+                <!-- Fila 5 (Vacía) -->
+                <tr>
+                    <td class="square-label label-vertical">5</td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square-label label-vertical">4</td>
+                </tr>
+                <!-- Fila 4 (Vacía) -->
+                <tr>
+                    <td class="square-label label-vertical">4</td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square-label label-vertical">5</td>
+                </tr>
+                <!-- Fila 3 (Vacía) -->
+                <tr>
+                    <td class="square-label label-vertical">3</td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square white"></td>
+                    <td class="square black"></td>
+                    <td class="square-label label-vertical">6</td>
+                </tr>
+                <!-- Fila 2 (Peones Negros) -->
+                <tr>
+                    <td class="square-label label-vertical">2</td>
+                    <td class="square black"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square white"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square black"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square white"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square black"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square white"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square black"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square white"><img src="images/negras/peonnegro.png" alt="Peón Negro"></td>
+                    <td class="square-label label-vertical">7</td>
+                </tr>
+                <!-- Fila 1 (Negras) -->
+                <tr>
+                    <td class="square-label label-vertical label-bottom-left">1</td>
+                    <td class="square white"><img src="images/negras/torrenegra.png" alt="Torre Negra"></td>
+                    <td class="square black"><img src="images/negras/caballonegro.png" alt="Caballo Negro"></td>
+                    <td class="square white"><img src="images/negras/alfilnegro.png" alt="Alfil Negro"></td>
+                    <td class="square black"><img src="images/negras/reinanegra.png" alt="Reina Negra"></td>
+                    <td class="square white"><img src="images/negras/reynegro.png" alt="Rey Negro"></td>
+                    <td class="square black"><img src="images/negras/alfilnegro.png" alt="Alfil Negro"></td>
+                    <td class="square white"><img src="images/negras/caballonegro.png" alt="Caballo Negro"></td>
+                    <td class="square black"><img src="images/negras/torrenegra.png" alt="Torre Negra"></td>
+                    <td class="square-label label-vertical label-bottom-right">8</td>
+                </tr>
+                <!-- Fila de letras inferior -->
+                <tr class="column-labels-bottom">
+                    <td class="corner-bottom-left"></td>
+                    <td class="label-letter-bottom">a</td>
+                    <td class="label-letter-bottom">b</td>
+                    <td class="label-letter-bottom">c</td>
+                    <td class="label-letter-bottom">d</td>
+                    <td class="label-letter-bottom">e</td>
+                    <td class="label-letter-bottom">f</td>
+                    <td class="label-letter-bottom">g</td>
+                    <td class="label-letter-bottom">h</td>
+                    <td class="corner-bottom-right"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>Quieres mas informacion sobre el ajedrez? <a href="https://es.wikipedia.org/wiki/Ajedrez">Haz click aqui</a></p>
+        <p>Quieres jugar al ajedrez? <a href="https://www.chess.com/">Haz click aqui</a></p>
+    </footer>
+</body>
+</html>
+

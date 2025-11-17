@@ -1,0 +1,202 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* El width incluye padding y border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Ejemplos de Padding */
+.ejemplo-padding {
+    margin: 20px 0;
+}
+
+/* Padding por partes (top, right, bottom, left) */
+.caja-padding-1 {
+    width: 200px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 2px solid #333;
+    padding-top: 25px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+}
+
+/* Padding abreviado: 4 valores (top right bottom left) */
+.caja-padding-2 {
+    width: 200px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 2px solid #333;
+    padding: 25px 100px 50px 10px;
+}
+
+/* Padding abreviado: 3 valores (top right/left bottom) */
+.caja-padding-3 {
+    width: 200px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 2px solid #333;
+    padding: 25px 100px 50px;
+}
+
+/* Padding abreviado: 2 valores (top/bottom right/left) */
+.caja-padding-4 {
+    width: 200px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 2px solid #333;
+    padding: 25px 100px;
+}
+
+/* Padding abreviado: 1 valor (todos los lados igual) */
+.caja-padding-5 {
+    width: 200px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 2px solid #333;
+    padding: 25px;
+}
+
+/* Ejemplos de Border */
+.ejemplo-border {
+    margin: 20px 0;
+}
+
+/* Border por partes (width, style, color) */
+.caja-border-1 {
+    width: 200px;
+    height: 100px;
+    background-color: #95e1d3;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+}
+
+/* Border abreviado (width style color) */
+.caja-border-2 {
+    width: 200px;
+    height: 100px;
+    background-color: #95e1d3;
+    border: 5px solid blue;
+}
+
+/* Border con estilos diferentes en cada lado */
+.caja-border-3 {
+    width: 200px;
+    height: 100px;
+    background-color: #95e1d3;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    border-width: 5px;
+    border-color: red;
+}
+
+/* Border por partes abreviado (cada lado con su estilo) */
+.caja-border-4 {
+    width: 200px;
+    height: 100px;
+    background-color: #95e1d3;
+    border-top: 5px dotted red;
+    border-right: 5px solid blue;
+    border-bottom: 5px dotted red;
+    border-left: 5px solid blue;
+}
+
+/* Bordes redondeados */
+.caja-border-radius {
+    width: 200px;
+    height: 100px;
+    background-color: #a29bfe;
+    border: 3px solid #333;
+    border-radius: 5px; /* Redondea las esquinas */
+}
+
+/* Ejemplos de Margin */
+.ejemplo-margin {
+    margin: 20px 0;
+}
+
+/* Margin por partes (top, right, bottom, left) */
+.caja-margin-1 {
+    width: 200px;
+    height: 100px;
+    background-color: #ff6b6b;
+    border: 2px solid #333;
+    margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+
+/* Margin abreviado: 4 valores (top right bottom left) */
+.caja-margin-2 {
+    width: 200px;
+    height: 100px;
+    background-color: #ff6b6b;
+    border: 2px solid #333;
+    margin: 25px 100px 50px 10px;
+}
+
+/* Margin abreviado: 3 valores (top right/left bottom) */
+.caja-margin-3 {
+    width: 200px;
+    height: 100px;
+    background-color: #ff6b6b;
+    border: 2px solid #333;
+    margin: 25px 100px 50px;
+}
+
+/* Margin abreviado: 2 valores (top/bottom right/left) */
+.caja-margin-4 {
+    width: 200px;
+    height: 100px;
+    background-color: #ff6b6b;
+    border: 2px solid #333;
+    margin: 25px 100px;
+}
+
+/* Margin abreviado: 1 valor (todos los lados igual) */
+.caja-margin-5 {
+    width: 200px;
+    height: 100px;
+    background-color: #ff6b6b;
+    border: 2px solid #333;
+    margin: 25px;
+}
+
+/* Estilos para bloques de código */
+.codigo {
+    background: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.codigo .comentario {
+    color: #666;
+}

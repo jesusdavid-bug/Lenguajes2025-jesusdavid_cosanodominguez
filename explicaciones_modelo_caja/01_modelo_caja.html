@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jesús David Cosano">
+    <title>Modelo de Caja (Box Model) - CSS</title>
+    <link rel="stylesheet" href="styles/modelo_caja.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modelo de Caja (Box Model)</h1>
+
+        <h2>Padding</h2>
+        <p>Espacio interno entre el contenido y el borde.</p>
+
+        <div class="ejemplo-padding">
+            <p><strong>Por partes:</strong></p>
+            <div class="caja-padding-1">Contenido</div>
+            <div class="codigo">
+                padding-top: 25px;<br>
+                padding-right: 100px;<br>
+                padding-bottom: 50px;<br>
+                padding-left: 10px;
+            </div>
+        </div>
+
+        <div class="ejemplo-padding">
+            <p><strong>Abreviado (4 valores):</strong></p>
+            <div class="caja-padding-2">Contenido</div>
+            <div class="codigo">
+                padding: 25px 100px 50px 10px; <span class="comentario">/* top right bottom left */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-padding">
+            <p><strong>Abreviado (3 valores):</strong></p>
+            <div class="caja-padding-3">Contenido</div>
+            <div class="codigo">
+                padding: 25px 100px 50px; <span class="comentario">/* top right/left bottom */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-padding">
+            <p><strong>Abreviado (2 valores):</strong></p>
+            <div class="caja-padding-4">Contenido</div>
+            <div class="codigo">
+                padding: 25px 100px; <span class="comentario">/* top/bottom right/left */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-padding">
+            <p><strong>Abreviado (1 valor):</strong></p>
+            <div class="caja-padding-5">Contenido</div>
+            <div class="codigo">
+                padding: 25px; <span class="comentario">/* todos los lados */</span>
+            </div>
+        </div>
+
+        <h2>Border</h2>
+        <p>Borde visible alrededor del padding y contenido.</p>
+
+        <div class="ejemplo-border">
+            <p><strong>Por partes:</strong></p>
+            <div class="caja-border-1">Contenido</div>
+            <div class="codigo">
+                border-width: 5px;<br>
+                border-style: solid;<br>
+                border-color: blue;
+            </div>
+        </div>
+
+        <div class="ejemplo-border">
+            <p><strong>Abreviado:</strong></p>
+            <div class="caja-border-2">Contenido</div>
+            <div class="codigo">
+                border: 5px solid blue;
+            </div>
+        </div>
+
+        <div class="ejemplo-border">
+            <p><strong>Por partes (estilos diferentes):</strong></p>
+            <div class="caja-border-3">Contenido</div>
+            <div class="codigo">
+                border-top-style: dotted;<br>
+                border-right-style: solid;<br>
+                border-bottom-style: dotted;<br>
+                border-left-style: solid;
+            </div>
+        </div>
+
+        <div class="ejemplo-border">
+            <p><strong>Por partes abreviado:</strong></p>
+            <div class="caja-border-4">Contenido</div>
+            <div class="codigo">
+                border-top: 5px dotted red;<br>
+                border-right: 5px solid blue;<br>
+                border-bottom: 5px dotted red;<br>
+                border-left: 5px solid blue;
+            </div>
+        </div>
+
+        <div class="ejemplo-border">
+            <p><strong>Bordes redondeados:</strong></p>
+            <div class="caja-border-radius">Contenido</div>
+            <div class="codigo">
+                border-radius: 5px;
+            </div>
+        </div>
+
+        <h2>Margin</h2>
+        <p>Espacio externo fuera del borde.</p>
+
+        <div class="ejemplo-margin">
+            <p><strong>Por partes:</strong></p>
+            <div class="caja-margin-1">Contenido</div>
+            <div class="codigo">
+                margin-top: 25px;<br>
+                margin-right: 100px;<br>
+                margin-bottom: 50px;<br>
+                margin-left: 10px;
+            </div>
+        </div>
+
+        <div class="ejemplo-margin">
+            <p><strong>Abreviado (4 valores):</strong></p>
+            <div class="caja-margin-2">Contenido</div>
+            <div class="codigo">
+                margin: 25px 100px 50px 10px; <span class="comentario">/* top right bottom left */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-margin">
+            <p><strong>Abreviado (3 valores):</strong></p>
+            <div class="caja-margin-3">Contenido</div>
+            <div class="codigo">
+                margin: 25px 100px 50px; <span class="comentario">/* top right/left bottom */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-margin">
+            <p><strong>Abreviado (2 valores):</strong></p>
+            <div class="caja-margin-4">Contenido</div>
+            <div class="codigo">
+                margin: 25px 100px; <span class="comentario">/* top/bottom right/left */</span>
+            </div>
+        </div>
+
+        <div class="ejemplo-margin">
+            <p><strong>Abreviado (1 valor):</strong></p>
+            <div class="caja-margin-5">Contenido</div>
+            <div class="codigo">
+                margin: 25px; <span class="comentario">/* todos los lados */</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
