@@ -1,0 +1,355 @@
+/* Un buen nombre vale más que mil comentarios, pero como no empiece a comentar esto me pierdo. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: old-windows-font;
+    font-size: 11px;
+    overflow: hidden;
+}
+
+/* Esta es una nueva fuente de Dafont que me ha gustado como fuente de Windows retro
+https://www.dafont.com/leviwindows.font*/
+
+@font-face {
+    font-family: old-windows-font;
+    src: url(../fonts/windows-regular.ttf);
+}
+
+/* Estilos del escritorio de Windows 95 */
+
+body.desktop {
+    background-image: url('../images/fondo_win95.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.desktop-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    gap: 25px;
+    padding: 20px;
+    height: 95vh;
+    align-content: start;
+}
+
+.icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px;
+    height: auto;
+}
+
+.icon img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+}
+
+.icon img:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+.icon span {
+    color: #fff;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #000;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+}
+
+.start-button {
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 2px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.start-button img {
+    height: 24px;
+    width: auto;
+}
+
+.start-button:active {
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.taskbar-time {
+    background-color: #c0c0c0;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 4px 8px;
+    margin-right: 4px;
+    font-size: 11px;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Estilos de la ventana del apartado info como pop-up */
+
+/* Esto es para que el checkbox que controla la ventana no se muestre en el escritorio */
+.window-toggle {
+    display: none;
+}
+
+/* Esto es para que la ventana pop-up esté oculta por defecto */
+.window-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+/* Esto es para que cuando el checkbox esté marcado, se muestre la ventana */
+#info-window-toggle:checked ~ .window-popup {
+    display: block;
+}
+
+/* Esto es para centrar la ventana en la pantalla */
+.window-popup .window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -250px;
+    width: 500px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.title-bar {
+    background-color: #000080;
+    color: #fff;
+    padding: 3px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.title-bar-text {
+    padding-left: 4px;
+}
+
+.title-bar-controls {
+    display: flex;
+    gap: 2px;
+}
+
+/* Botón de cerrar la ventana */
+.close-btn {
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    line-height: 14px;
+    display: inline-block;
+}
+
+.close-btn:active {
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.window-body {
+    padding: 15px;
+    background-color: #c0c0c0;
+}
+
+.window-body h1 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.window-body p {
+    margin: 6px 0;
+    line-height: 1.4;
+    font-size: 11px;
+}
+
+.window-body hr {
+    border: none;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #fff;
+    margin: 10px 0;
+}
+
+.window-body strong {
+    font-weight: bold;
+}
+
+/* Estilos para el botón de Windows 95 */
+
+.win95-button {
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 6px 20px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    margin-top: 8px;
+}
+
+.win95-button:active {
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Recursos y referencias utilizadas para crear estos estilos CSS:
+
+Repositorio de win98popup - para la ventana pop-up sin JavaScript, bastante útil:
+https://github.com/mbledkowski/win98popup?tab=readme-ov-file
+
+Otra repositorio de referencia para el estilo Windows 95:
+https://github.com/degeneratehyperbola/windows95
+
+Inspiración general de Windows 95 y su estética:
+https://github.com/DonChiaQE/win95
+
+Canal de YouTube de Programming with Mosh - algunos conceptos ampliados de CSS y HTML:
+https://www.youtube.com/@programmingwithmosh
+
+Canal de YouTube de deivchoi - Más recursos de CSS y desarrollo web:
+https://www.youtube.com/@deivchoi
+
+Canal de YouTube de midudev - Recursos de CSS y más:
+https://www.youtube.com/@midudev
+
+Display Grid - Para organizar los iconos en columnas:
+https://www.w3schools.com/css/css_grid.asp
+
+Display Flex - Para alinear elementos en la barra de tareas y botones:
+https://www.w3schools.com/css/css3_flexbox.asp
+
+Position Fixed y Absolute - Para fijar elementos en pantalla:
+https://www.w3schools.com/css/css_positioning.asp
+
+Border Styles - Para crear el efecto 3D de los botones:
+https://www.w3schools.com/css/css_border.asp
+
+Text Shadow - Para la sombra del texto de los iconos:
+https://www.w3schools.com/css/css3_shadows.asp
+
+Transform (translate) - Para centrar la ventana de información:
+https://www.w3schools.com/css/css3_2dtransforms.asp
+
+Background Image y Background Properties - Para el fondo del escritorio:
+https://www.w3schools.com/css/css_background_image.asp
+
+Box-sizing Border-box - Para incluir padding y border en el tamaño total:
+https://www.w3schools.com/css/css3_box-sizing.asp
+
+Overflow Hidden - Para ocultar el contenido que sobresale:
+https://www.w3schools.com/css/css_overflow.asp
+
+Viewport Units (vh, vw) - Unidades relativas al tamaño de la ventana:
+https://www.w3schools.com/css/css_units.asp
+
+Grid Template Columns con repeat() y auto-fill:
+https://www.w3schools.com/css/css_grid_container.asp
+
+Justify-content y Align-items - Para alineación en Flexbox:
+https://www.w3schools.com/css/css3_flexbox_container.asp
+
+Gap - Espaciado entre elementos de Grid y Flexbox:
+https://www.w3schools.com/cssref/css3_pr_gap.php
+
+Word-wrap Break-word - Para partir palabras largas:
+https://www.w3schools.com/cssref/css3_pr_word-wrap.php
+
+Cursor Pointer - Para cambiar el cursor en elementos interactivos:
+https://www.w3schools.com/cssref/pr_class_cursor.php
+
+Pseudo-clase :active - Para efectos al hacer clic:
+https://www.w3schools.com/cssref/sel_active.php
+
+Min-width - Para tamaños mínimos:
+https://www.w3schools.com/cssref/pr_dim_min-width.php
+
+Display None - Para ocultar elementos (usado en el checkbox y ventana pop-up):
+https://www.w3schools.com/cssref/pr_class_display.php
+
+Pseudo-clase :checked - Para detectar cuando un checkbox está marcado (pop-up sin JavaScript):
+https://www.w3schools.com/cssref/sel_checked.php
+
+Selector de Hermanos (~) - Para seleccionar elementos que son hermanos (mostrar ventana cuando checkbox está marcado):
+https://www.w3schools.com/cssref/css_selectors.php
+
+Z-index - Para controlar el orden de apilamiento de elementos (ventana sobre el escritorio):
+https://www.w3schools.com/cssref/pr_pos_z-index.php
+
+Label con atributo for - Para asociar labels con inputs (activar checkbox al hacer clic):
+https://www.w3schools.com/tags/tag_label.asp
+
+Margin Negativo - Para centrar elementos usando position absolute:
+https://www.w3schools.com/css/css_margin.asp
+
+Line-height - Para centrar verticalmente el texto en el botón de cerrar:
+https://www.w3schools.com/cssref/pr_dim_line-height.php
+
+*/

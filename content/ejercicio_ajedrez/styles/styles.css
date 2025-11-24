@@ -1,0 +1,165 @@
+/* Estilos generales de la web. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+    min-height: 100vh;
+    background-color: burlywood;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+.board-container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+/* Tablero: 10x10 celdas de 100x100px = 1000x1000px */
+.chessboard {
+    width: 1000px;
+    height: 1000px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0 auto;
+}
+
+/* Casillas del tablero de ajedrez */
+.chessboard td.square {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.chessboard td.square.white {
+    background-image: url('../images/tablero/blanco.png');
+    background-size: cover;
+}
+
+.chessboard td.square.black {
+    background-image: url('../images/tablero/negro.png');
+    background-size: cover;
+}
+
+/* Piezas: 100x100px con fondo transparente */
+.chessboard td.square img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Etiquetas numéricas laterales (1-8) */
+.chessboard td.square-label.label-vertical {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/tablero/vertical.png');
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Esquinas de los números */
+.chessboard td.label-top-left {
+    background-image: url('../images/tablero/arribaIzquierda.png');
+    background-size: cover;
+}
+
+.chessboard td.label-top-right {
+    background-image: url('../images/tablero/arribaDerecha.png');
+    background-size: cover;
+}
+
+.chessboard td.label-bottom-left {
+    background-image: url('../images/tablero/abajoIzquierda.png');
+    background-size: cover;
+}
+
+.chessboard td.label-bottom-right {
+    background-image: url('../images/tablero/abajoDerecha.png');
+    background-size: cover;
+}
+
+/* Esquinas vacías (superior e inferior) */
+.chessboard td.corner-top-left,
+.chessboard td.corner-top-right,
+.chessboard td.corner-bottom-left,
+.chessboard td.corner-bottom-right {
+    width: 100px;
+    height: 100px;
+}
+
+.chessboard td.corner-top-left {
+    background-image: url('../images/tablero/arribaIzquierda.png');
+    background-size: cover;
+}
+
+.chessboard td.corner-top-right {
+    background-image: url('../images/tablero/arribaDerecha.png');
+    background-size: cover;
+}
+
+.chessboard td.corner-bottom-left {
+    background-image: url('../images/tablero/abajoIzquierda.png');
+    background-size: cover;
+}
+
+.chessboard td.corner-bottom-right {
+    background-image: url('../images/tablero/abajoDerecha.png');
+    background-size: cover;
+}
+
+/* Etiquetas de letras (a-h) superior e inferior */
+.chessboard tr.column-labels-top td,
+.chessboard tr.column-labels-bottom td {
+    height: 100px;
+    background-image: url('../images/tablero/horizontal.png');
+    background-size: cover;
+}
+
+.chessboard td.label-letter-top,
+.chessboard td.label-letter-bottom {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d4af37;
+    text-decoration: none;
+}
