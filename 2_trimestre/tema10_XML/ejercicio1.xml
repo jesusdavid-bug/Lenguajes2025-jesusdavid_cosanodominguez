@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-model href="XSDs\ejercicio1.xsd"?>
+
+<catalogo>
+    <libro>
+        <titulo>La Ciudad de las Bestias</titulo>
+        <autor>Isabel Allende</autor>
+        <genero>Novela</genero>
+        <anio>2002</anio>
+        <precio>11.35</precio>
+    </libro>
+    <libro>
+        <titulo>Harry Potter y la Piedra Filosofal</titulo>
+        <autor>J.K. Rowling</autor>
+        <genero>Fantasía</genero>
+        <anio>1997</anio>
+        <precio>18.50</precio>
+    </libro>
+    <libro>
+        <titulo>El Señor de los Anillos</titulo>
+        <autor>J.R.R. Tolkien</autor>
+        <genero>Fantasía Épica</genero>
+        <anio>1954</anio>
+        <precio>25.90</precio>
+    </libro>
+    <libro>
+        <titulo>Crónica de una muerte anunciada</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <genero>Novela corta</genero>
+        <anio>1981</anio>
+        <precio>12.00</precio>
+    </libro>
+</catalogo>

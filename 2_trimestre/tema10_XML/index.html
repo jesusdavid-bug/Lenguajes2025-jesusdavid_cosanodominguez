@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jesús David Cosano" />
+    <title>Resumen de XML</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+      .contenedor {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #ff9900;
+        padding-bottom: 20px;
+      }
+      h1 {
+        color: #d35400;
+      }
+      h2 {
+        color: #e67e22;
+        margin-top: 25px;
+      }
+      p {
+        line-height: 1.6;
+      }
+      ul {
+        background-color: #fff8e1;
+        padding: 20px 40px;
+        border-radius: 5px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      .enlaces-ejercicios {
+        background-color: #e8f6f3;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+      .enlaces-ejercicios a {
+        display: block;
+        margin: 10px 0;
+        color: #16a085;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .enlaces-ejercicios a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #777;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <header>
+        <h1>Resumen de XML</h1>
+        <p>
+          XML (Lenguaje de Marcado Extensible) es un estándar del W3C diseñado
+          para almacenar, describir y compartir datos entre diferentes sistemas,
+          separando la información de su presentación.
+        </p>
+      </header>
+
+      <section>
+        <h2>¿Qué es XML?</h2>
+        <p>
+          XML no es un lenguaje de programación ni una base de datos. Es un
+          lenguaje de marcado de estructura libre, similar a HTML en apariencia,
+          pero con un propósito diferente: HTML muestra datos y XML los
+          transporta.
+        </p>
+      </section>
+
+      <section>
+        <h2>Características Principales</h2>
+        <ul>
+          <li>
+            <strong>Estructura de árbol:</strong> Todo documento tiene una única
+            raíz.
+          </li>
+          <li>
+            <strong>Etiquetas propias:</strong> No están predefinidas, el autor
+            las inventa.
+          </li>
+          <li>
+            <strong>Texto plano:</strong> Es legible tanto por humanos como por
+            máquinas.
+          </li>
+          <li>
+            <strong>Estricto:</strong> Debe estar bien formado para funcionar.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Estructura de un Documento</h2>
+        <p>Un documento XML se divide en dos partes fundamentales:</p>
+        <ul>
+          <li>
+            <strong>Prólogo:</strong> Incluye la declaración XML (versión y
+            codificación).
+          </li>
+          <li>
+            <strong>Cuerpo:</strong> Contiene el elemento raíz y todo el árbol
+            de contenido.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Reglas de Sintaxis (Bien Formado)</h2>
+        <p>
+          Para que un XML sea procesado correctamente debe cumplir estas reglas:
+        </p>
+        <ul>
+          <li>Todas las etiquetas deben tener apertura y cierre.</li>
+          <li>Los atributos deben ir siempre entre comillas.</li>
+          <li>Distingue entre mayúsculas y minúsculas (Case Sensitive).</li>
+          <li>Los elementos deben estar correctamente anidados.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Validación (DTD y XSD)</h2>
+        <p>
+          Un documento está "validado" cuando, además de estar bien formado,
+          cumple con unas reglas específicas de estructura y tipos de datos
+          definidas en:
+        </p>
+        <ul>
+          <li>
+            <strong>DTD:</strong> Definición de Tipo de Documento (más antiguo).
+          </li>
+          <li>
+            <strong>XSD:</strong> XML Schema (más potente y permite definir
+            tipos de datos).
+          </li>
+        </ul>
+      </section>
+
+      <section class="enlaces-ejercicios">
+        <h2>Ejercicios XML</h2>
+        <p>Acceso a los archivos XML de práctica:</p>
+        <a href="ejercicio1.xml">Ejercicio 1: Catálogo de Libros</a>
+        <a href="ejercicio2.xml">Ejercicio 2: Agenda de Contactos</a>
+        <a href="ejercicio3.xml">Ejercicio 3: Menú de Restaurante</a>
+        <a href="ejercicio4.xml">Ejercicio 4: Datos DNI Español</a>
+        <a href="ejercicio5.xml">Ejercicio 5: Tarjeta de Crédito</a>
+      </section>
+
+      <footer>
+        <p>Trabajo realizado por: Jesús David Cosano Domínguez</p>
+        <p>Asignatura: Lenguajes de Marcas - Trabajo de Clase</p>
+      </footer>
+    </div>
+  </body>
+</html>

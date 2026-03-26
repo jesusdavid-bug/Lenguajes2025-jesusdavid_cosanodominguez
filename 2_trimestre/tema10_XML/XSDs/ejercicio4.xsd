@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dni">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numero_identidad" type="xs:string"/>
+                <xs:element name="primer_apellido" type="xs:string"/>
+                <xs:element name="segundo_apellido" type="xs:string"/>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="sexo" type="xs:string"/>
+                <xs:element name="nacionalidad" type="xs:string"/>
+                <xs:element name="fecha_nacimiento" type="xs:string"/>
+                <xs:element name="numero_soporte" type="xs:string"/>
+                <xs:element name="fecha_validez" type="xs:string"/>
+                <xs:element name="lugar_nacimiento" type="xs:string"/>
+                <xs:element name="provincia_nacimiento" type="xs:string"/>
+                <xs:element name="nombre_padre" type="xs:string"/>
+                <xs:element name="nombre_madre" type="xs:string"/>
+                <xs:element name="domicilio" type="xs:string"/>
+                <xs:element name="lugar_domicilio" type="xs:string"/>
+                <xs:element name="provincia_domicilio" type="xs:string"/>
+                <xs:element name="equipo_expedicion" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

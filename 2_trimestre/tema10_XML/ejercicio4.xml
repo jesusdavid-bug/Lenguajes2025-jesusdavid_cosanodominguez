@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XSDs\ejercicio4.xsd"?>
+
+<dni>
+    <numero_identidad>85624692Q</numero_identidad>
+    <primer_apellido>García</primer_apellido>
+    <segundo_apellido>Rodríguez</segundo_apellido>
+    <nombre>Laura</nombre>
+    <sexo>F</sexo>
+    <nacionalidad>ESP</nacionalidad>
+    <fecha_nacimiento>18/05/2007</fecha_nacimiento>
+    <numero_soporte>AAA123456</numero_soporte>
+    <fecha_validez>15/05/2030</fecha_validez>
+    <lugar_nacimiento>Málaga</lugar_nacimiento>
+    <provincia_nacimiento>Málaga</provincia_nacimiento>
+    <nombre_padre>Antonio</nombre_padre>
+    <nombre_madre>Carmen</nombre_madre>
+    <domicilio>Calle Larios 5, 3A</domicilio>
+    <lugar_domicilio>Málaga</lugar_domicilio>
+    <provincia_domicilio>Málaga</provincia_domicilio>
+    <equipo_expedicion>29001</equipo_expedicion>
+</dni>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XSDs\ejercicio3.xsd"?>
+
+<menu>
+    <item>
+        <nombre>Ensalada César</nombre>
+        <categoria>Entrante</categoria>
+        <descripcion>Lechuga, pollo, queso y salsa</descripcion>
+        <precio>8.50</precio>
+    </item>
+    <item>
+        <nombre>Sopa Castellana</nombre>
+        <categoria>Entrante</categoria>
+        <descripcion>Sopa de ajo con huevo y jamón</descripcion>
+        <precio>6.00</precio>
+    </item>
+    <item>
+        <nombre>Lentejas con chorizo</nombre>
+        <categoria>Principal</categoria>
+        <descripcion>Guiso tradicional casero con chorizo y verduras</descripcion>
+        <precio>11.50</precio>
+    </item>
+    <item>
+        <nombre>Merluza en salsa verde</nombre>
+        <categoria>Principal</categoria>
+        <descripcion>Pescado fresco con almejas</descripcion>
+        <precio>16.50</precio>
+    </item>
+    <item>
+        <nombre>Tarta de Queso</nombre>
+        <categoria>Postre</categoria>
+        <descripcion>Casera con mermelada de fresa</descripcion>
+        <precio>5.50</precio>
+    </item>
+</menu>

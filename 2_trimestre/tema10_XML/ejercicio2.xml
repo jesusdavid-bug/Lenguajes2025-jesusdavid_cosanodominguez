@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XSDs\ejercicio2.xsd"?>
+
+<agenda>
+    <contacto>
+        <nombre>Ferran Cutillas</nombre>
+        <telefono>600111222</telefono>
+        <email>fcc0025@alu.medac.es</email>
+        <relacion>Trabajo</relacion>
+        <ciudad>Alicante</ciudad>
+    </contacto>
+    <contacto>
+        <nombre>Guillermo Jorge</nombre>
+        <telefono>600333444</telefono>
+        <email>gjs0004@alu.medac.es</email>
+        <relacion>Familia</relacion>
+        <ciudad>Córdoba</ciudad>
+    </contacto>
+    <contacto>
+        <nombre>Victor Romero</nombre>
+        <telefono>600555666</telefono>
+        <email>vrm0019@alu.medac.es</email>
+        <relacion>Amigo</relacion>
+        <ciudad>Córdoba</ciudad>
+    </contacto>
+    <contacto>
+        <nombre>Jesús David</nombre>
+        <telefono>603011704</telefono>
+        <email>jcd0026@alu.medac.es</email>
+        <relacion>Gimnasio</relacion>
+        <ciudad>Córdoba</ciudad>
+    </contacto>
+</agenda>

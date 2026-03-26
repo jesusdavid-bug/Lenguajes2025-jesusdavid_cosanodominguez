@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XSDs\ejercicio5.xsd"?>
+
+<tarjeta>
+    <banco>Banco Bilbao Vizcaya Argentaria</banco>
+    <marca>VISA</marca>
+    <tipo>Crédito</tipo>
+    <numero>4242 4242 4242 4242</numero>
+    <titular>JESUS DAVID COSANO DOMINGUEZ</titular>
+    <mes_caducidad>12</mes_caducidad>
+    <anio_caducidad>2026</anio_caducidad>
+    <cvv>999</cvv>
+    <moneda>Euro</moneda>
+    <limite_credito>3000.00</limite_credito>
+    <estado>Activa</estado>
+</tarjeta>
