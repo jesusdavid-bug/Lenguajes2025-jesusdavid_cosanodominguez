@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico Responsive</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .contenedor {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .foto {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: none; 
+        }
+
+        .mensaje {
+            display: none;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: #ff9999;
+                background-image: url(./img/japan-bg-cerca.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+                height: 100vh;
+            }
+            #img-movil {
+                display: inline-block;
+                width: 150px;
+            }
+            #texto-movil {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 1200px) {
+            body {
+                background-color: #99ff99;
+                background-image: url(./img/japan-bg-noche.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+                height: 100vh;
+            }
+            #img-tablet {
+                display: inline-block;
+                width: 250px;
+            }
+            #texto-tablet {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 1201px) {
+            body {
+                background-color: #9999ff;
+                background-image: url(./img/japan-bg.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+                height: 100vh;
+            }
+            #img-pc {
+                display: inline-block;
+                width: 400px;
+            }
+            #texto-pc {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <img id="img-movil" src="./img/tokyo-tower-cerca.jpg" alt="Torre Tokyo Movil" class="foto">
+        <img id="img-tablet" src="./img/tokyo-tower-noche.jpg" alt="Torre Tokyo Tablet" class="foto">
+        <img id="img-pc" src="./img/tokyo-tower.jpg" alt="Torre Tokyo PC" class="foto">
+        <div id="texto-movil" class="mensaje">Pantalla pequeña (Torre Cerca)</div>
+        <div id="texto-tablet" class="mensaje">Pantalla mediana (Torre Noche)</div>
+        <div id="texto-pc" class="mensaje">Pantalla grande (Torre Paisaje)</div>
+    </div>
+<a href="../../index.html" style="position:fixed;bottom:20px;right:20px;background:#38bdf8;color:#0f172a;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:600;font-family:sans-serif;box-shadow:0 4px 15px rgba(56,189,248,0.4);z-index:9999;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(56,189,248,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(56,189,248,0.4)'">Volver al Index</a>
+</body>
+</html>

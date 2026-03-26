@@ -1,0 +1,84 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  header {
+    background-color: blue;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 80px;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    background-color: gray;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    z-index: 1000;
+  }
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+  }
+  .rojo {
+    background-color: red;
+    flex: 1;
+    height: 100%;
+  }
+  .verde {
+    background-color: green;
+    flex: 2;
+    height: 100%;
+  }
+  .amarillo {
+    background-color: yellow;
+    flex: 3;
+    height: 100%;
+    position: relative;
+  }
+  .naranja {
+    background-color: orange;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    font-size: 24px;
+  }
+  .morado {
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 75px;
+    right: 100px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .link-container {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+   bottom: 100px;
+    right: 60px;
+    z-index: 1000;
+}
+
+.link-container a {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-container a:hover {
+    background-color: #0056b3;
+}

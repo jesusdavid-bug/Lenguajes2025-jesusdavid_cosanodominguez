@@ -1,135 +1,301 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jesús David Cosano">
-    <title>Proyectos DAW - Escritorio</title>
-    <link rel="icon" type="image/svg" href="images/logo_win95.svg">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <title>Portafolio - Jesús David</title>
+    <style>
+        :root {
+            /* Futuristic dark theme colors */
+            --bg-base: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-glow: #38bdf8;
+            --accent-secondary: #818cf8;
+            --border-subtle: #334155;
+            --card-hover-bg: #223046;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.04), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 50%);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-glow);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            width: 100%;
+            max-width: 1200px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 36px 32px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.8s ease-out backwards;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .card:nth-child(2) { animation-delay: 0.15s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--accent-glow), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-secondary);
+            background: var(--card-hover-bg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .number-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-glow);
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .project-list {
+            list-style: none;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .project-link {
+            display: block;
+            text-decoration: none;
+            color: var(--text-muted);
+            background: rgba(15, 23, 42, 0.4);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::after {
+            content: "→";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%) translateX(-10px);
+            opacity: 0;
+            color: var(--accent-glow);
+            transition: all 0.25s ease;
+        }
+
+        .project-link:hover {
+            color: var(--text-main);
+            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--border-subtle);
+            transform: translateX(6px);
+            padding-right: 45px;
+        }
+
+        .project-link:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .disabled-card {
+            border-style: dashed;
+            background: transparent;
+        }
+
+        .disabled-card:hover {
+            transform: none;
+            border-color: var(--border-subtle);
+            box-shadow: none;
+            background: rgba(30, 41, 59, 0.3);
+        }
+
+        .disabled-card:hover::before {
+            opacity: 0;
+        }
+        
+        .disabled-card .number-badge {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--text-muted);
+            border-color: rgba(148, 163, 184, 0.2);
+        }
+
+        .disabled-card h2 {
+            color: var(--text-muted);
+        }
+
+        .coming-soon-wrapper {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+        }
+
+        .coming-soon-text {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-style: italic;
+            position: relative;
+            padding: 10px 20px;
+            border: 1px dashed var(--border-subtle);
+            border-radius: 30px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { border-color: var(--border-subtle); color: var(--text-muted); }
+            50% { border-color: var(--text-muted); color: var(--text-main); }
+            100% { border-color: var(--border-subtle); color: var(--text-muted); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
+<body>
 
-<body class="desktop">
-    <div class="desktop-icons">
-        <label for="info-window-toggle" class="icon">
-            <img src="images/texto_win95.png" alt="Acerca de">
-            <span>Acerca de</span>
-        </label>
+    <header>
+        <h1>¿A dónde quieres navegar?</h1>
+        <p class="subtitle">Jesús David</p>
+    </header>
 
-        <a href="content/bandera_japon_responsive/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Bandera Japón">
-            <span>Bandera Japón</span>
-        </a>
-
-        <a href="content/ejemplos_clase/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Ejemplos Clase">
-            <span>Ejemplos Clase</span>
-        </a>
-
-        <a href="content/ejercicio_ajedrez/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Ejercicio Ajedrez">
-            <span>Ejercicio Ajedrez</span>
-        </a>
-
-        <a href="content/explicaciones_modelo_caja/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Explicaciones Modelo Caja">
-            <span>Explicaciones Modelo Caja</span>
-        </a>
-
-        <a href="content/formularios/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Formularios">
-            <span>Formularios</span>
-        </a>
-
-        <a href="content/fuentes/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Fuentes">
-            <span>Fuentes</span>
-        </a>
-
-        <a href="content/miniweb/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Mini Web">
-            <span>Mini Web</span>
-        </a>
-
-        <a href="content/modelo_caja/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Modelo Caja">
-            <span>Modelo Caja</span>
-        </a>
-
-        <a href="content/pagina_ia/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Página IA">
-            <span>Página IA</span>
-        </a>
-
-        <a href="content/plantas_clase/plantas_de_interior_alumno.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Plantas">
-            <span>Plantas Interior</span>
-        </a>
-
-        <a href="content/sistema_solar/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Sistema Solar">
-            <span>Sistema Solar</span>
-        </a>
-
-        <a href="content/tablas/index.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Tablas">
-            <span>Tablas</span>
-        </a>
-
-        <a href="content/web_semantica/semantica.html" class="icon">
-            <img src="images/carpeta_win95.png" alt="Web Semántica">
-            <span>Web Semántica</span>
-        </a>
-
-        <a href="content/examen_jesusdavid/index.html" class="icon">
-            <img src="images/ordenador_win95.png" alt="Examen Jesús David">
-            <span>Examen Jesús David</span>
-        </a>
-
-        <a href="https://github.com/jesusdavid-bug/Lenguajes2025-jesusdavid_cosanodominguez" target="_blank" class="icon">
-            <img src="images/github_win95.png" alt="Repositorio GitHub">
-            <span>Repositorio de GitHub</span>
-        </a>
-    </div>
-
-    <div class="taskbar">
-        <div class="start-button">
-            <img src="images/logo_win95.svg" alt="Inicio">
-        </div>
-        <div class="taskbar-time">
-            <span>15:30</span>
-        </div>
-    </div>
-
-
-    <input type="checkbox" id="info-window-toggle" class="window-toggle">
-
-
-    <div class="window-popup">
-        <div class="window">
-            <div class="title-bar">
-                <div class="title-bar-text">Acerca de - Información del Proyecto</div>
-                <div class="title-bar-controls">
-                    <label for="info-window-toggle" class="close-btn">✕</label>
-                    <!-- Este for es para que el botón de cerrar se pueda asociar al checkbox, ha costado pero se ha logrado -->
-                </div>
+    <div class="grid-container">
+        
+        <!-- Trimestre 1 -->
+        <article class="card">
+            <div class="card-header">
+                <span class="number-badge">1</span>
+                <h2>1er Trimestre</h2>
             </div>
-            <div class="window-body">
-                <h1>Proyectos de Lenguaje de Marcas</h1>
-                <hr>
-                <p><strong>Autor:</strong> Jesús David Cosano</p>
-                <p><strong>Ciclo Formativo:</strong> Grado Superior en Desarrollo de Aplicaciones Web</p>
-                <p><strong>Curso Académico:</strong> 2025-2026</p>
-                <hr>
-                <p><strong>Descripción:</strong></p>
-                <p>Esta colección incluye todos los proyectos desarrollados durante el módulo de Lenguaje de Marcas y
-                    Sistemas de Gestión de Información del primer curso de DAW.</p>
-                <p>Los proyectos demuestran el aprendizaje y aplicación de HTML, CSS y estructuración de contenido web.
-                </p>
+            <ul class="project-list">
+                <li><a class="project-link" href="./1_trimestre/web_individual_jesusdavid/index.html">Ir a la web individual</a></li>
+                <li><a class="project-link" href="./1_trimestre/webjam_chuches_jesusdavid/index.html">Ir a la web grupal</a></li>
+            </ul>
+        </article>
+
+        <!-- Trimestre 2 -->
+        <article class="card">
+            <div class="card-header">
+                <span class="number-badge">2</span>
+                <h2>2º Trimestre</h2>
             </div>
-        </div>
+            <ul class="project-list">
+                <li><a class="project-link" href="./2_trimestre/posicionamientos/index.html">Ir a los ejercicios de posicionamientos</a></li>
+                <li><a class="project-link" href="./2_trimestre/ajedrez/index.html">Ir a los tableros de ajedrez</a></li>
+                <li><a class="project-link" href="./2_trimestre/mediaqueries/index.html">Ir a la actividad de media queries</a></li>
+                <li><a class="project-link" href="./2_trimestre/practica_dado/dado.html">Ir a la práctica del dado</a></li>
+                <li><a class="project-link" href="./2_trimestre/web_explicacion_xpath/index.html">Ir a la explicación de XPath</a></li>
+            </ul>    
+        </article>
+
+        <!-- Trimestre 3 -->
+        <article class="card disabled-card">
+            <div class="card-header">
+                <span class="number-badge">3</span>
+                <h2>3er Trimestre</h2>
+            </div>
+            <div class="coming-soon-wrapper">
+                <span class="coming-soon-text">Próximamente...</span>
+            </div>
+        </article>
+
     </div>
+
 </body>
-
 </html>

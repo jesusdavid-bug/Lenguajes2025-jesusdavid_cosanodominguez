@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jesús David Cosano Domínguez">
+    <title>Resumen Tema 12 - XML y XPath</title>
+    <style>
+        :root {
+            --primary-color: #004b79;
+            --secondary-color: #0073e6;
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.2em;
+        }
+
+        .intro-xpath {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        main {
+            background-color: transparent;
+            padding: 20px 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #eef2f5;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c2185b;
+            font-weight: bold;
+        }
+
+        .enlaces-ejercicios {
+            background-color: #eef7ff;
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        .enlaces-ejercicios a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .enlaces-ejercicios a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            padding: 20px;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Tema 12. Conversión y adaptación de documentos XML</h1>
+            <p class="intro-xpath">XPath es un lenguaje estándar que sirve para evaluar expresiones, navegar y acceder a los nodos específicos dentro de documentos XML. Actúa como una ruta o camino para extraer datos de forma precisa.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. Lenguajes de Transformación XSL</h2>
+                <p>XSL (eXtended Stylesheet Language) es una ampliación orientada a XML. Sus principales componentes son:</p>
+                <ul>
+                    <li><strong>XPath:</strong> Utilizado para evaluar expresiones y localizar elementos.</li>
+                    <li><strong>XSLT:</strong> Sirve para transformar el documento XML en HTML o en otro XML.</li>
+                    <li><strong>XSL-FO:</strong> Permite transformar los datos a otros formatos de salida, como por ejemplo PDF.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. El Árbol del Documento XML</h2>
+                <p>Los documentos XML se estructuran como un árbol genealógico compuesto por distintos tipos de nodos:</p>
+                <ul>
+                    <li><strong>Nodo Raíz:</strong> Es el origen del documento y siempre se representa con <code>/</code>.</li>
+                    <li><strong>Nodos Elemento, Atributo y Texto:</strong> Representan las etiquetas, sus propiedades y el contenido de las mismas.</li>
+                    <li><strong>Relaciones:</strong> Los nodos pueden ser ascendientes (padres), descendientes (hijos) o hermanos.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Sintaxis XPath</h2>
+                <p>Una expresión XPath es una cadena de texto estructurada jerárquicamente. Se divide en:</p>
+                <ul>
+                    <li><strong>Eje:</strong> Selecciona qué elementos o atributos buscar (ej. <code>/concesionario/coche</code>).</li>
+                    <li><strong>Predicado:</strong> Se escribe entre corchetes <code>[...]</code> y aplica condiciones o filtros al eje (ej. <code>[@matricula="8280KWT"]</code>).</li>
+                    <li><strong>Selección de nodos:</strong> Indica el resultado final a mostrar, como <code>text()</code> o <code>@atributo</code>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Formatos de Intercambio de Datos</h2>
+                <p>Además de XML, existen otros formatos populares para manejar información:</p>
+                <ul>
+                    <li><strong>JSON (.json):</strong> Formato ligero y legible basado en pares clave-valor y arrays, muy eficiente en aplicaciones web.</li>
+                    <li><strong>CSV (.csv):</strong> Formato tabular, simple y estructurado en texto plano, donde los valores se separan por comas u otros delimitadores.</li>
+                    <li><strong>YAML (.yaml / .yml):</strong> Formato que utiliza la indentación para organizar los datos jerárquicamente; es menos verboso y muy común en archivos de configuración.</li>
+                    <li><strong>XML:</strong> Formato jerárquico basado en etiquetas, muy flexible pero más verboso.</li>
+                </ul>
+            </section>
+
+            <section class="enlaces-ejercicios">
+                <h2>Enlaces a otros ejercicios</h2>
+                <p>Navega a las otras actividades del módulo:</p>
+                <ul>
+                    <li><a href="#">Ejercicio: Comprobación de extensiones en Visual Studio Code (.json, .csv, .yaml)</a></li>
+                    <li><a href="#">Práctica: Extraer datos con consultas XPath</a></li>
+                    <li><a href="#">Actividad: Transformaciones XSLT</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Autor:</strong> Jesús David Cosano Domínguez</p>
+        </footer>
+    </div>
+
+<a href="../../index.html" style="position:fixed;bottom:20px;right:20px;background:#38bdf8;color:#0f172a;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:600;font-family:sans-serif;box-shadow:0 4px 15px rgba(56,189,248,0.4);z-index:9999;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(56,189,248,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(56,189,248,0.4)'">Volver al Index</a>
+</body>
+</html>

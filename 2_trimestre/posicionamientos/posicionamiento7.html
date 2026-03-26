@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jesús David Cosano">
+    <title>Ejercicio de float</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: sans-serif;
+        color: #333;
+      }
+      header {
+        background-color: #002e4c;
+        color: #f1f1f1;
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      main {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .seccion {
+        background-color: #f9f9f9;
+        margin-bottom: 30px;
+        overflow: hidden;
+        padding: 10px;
+      }
+      .imagen-extranjero {
+        width: 250px;
+        height: auto;
+        border-radius: 8px;
+      }
+      .izquierda {
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .derecha {
+        float: right;
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+      p {
+        line-height: 1.6;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>El Extranjero - Albert Camus</h1>
+    </header>
+    <main>
+      <div class="seccion">
+        <img
+          src="./images/el_extranjero.jpg"
+          alt="El Extranjero"
+          class="imagen-extranjero izquierda"
+        />
+        <p>
+          El asilo de ancianos está en Marengo, a ochenta kilómetros de Argel.
+          Tomaré el autobús a las dos y llegaré por la tarde. De esa manera
+          podré velarla, y regresaré mañana por la noche. Pedí dos días de
+          licencia a mi patrón y no pudo negármelos ante una excusa semejante.
+          Pero no parecía satisfecho. Llegué a decirle: «No es culpa mía.» No me
+          respondió. Pensé entonces que no debía haberle dicho esto. Al fin y al
+          cabo, no tenía por qué excusarme.
+        </p>
+      </div>
+
+      <div class="seccion">
+        <img
+          src="./images/el_extranjero.jpg"
+          alt="El Extranjero"
+          class="imagen-extranjero derecha"
+        />
+        <p>
+          Tomé el autobús a las dos. Hacía mucho calor. Comí en el restaurante
+          de Celeste como de costumbre. Todos se condolieron mucho de mí, y
+          Celeste me dijo: «Madre hay una sola.» Cuando partí, me acompañaron
+          hasta la puerta. Me sentía un poco aturdido pues fue necesario que
+          subiera hasta la habitación de Manuel para pedirle prestados una
+          corbata negra y un brazal. El perdió a su tío hace unos meses.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

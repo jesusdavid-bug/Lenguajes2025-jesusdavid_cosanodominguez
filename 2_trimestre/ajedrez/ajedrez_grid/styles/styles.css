@@ -1,0 +1,165 @@
+/* Estilos generales de la web. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+    min-height: 100vh;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.board-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablero hecho con CSS Grid fluido */
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    background-color: #5c4033;
+}
+
+/* Celdas generales: centrado con Flexbox */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell.label-letter-top,
+.cell.label-letter-bottom,
+.cell.label-vertical {
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.horizontal-bg {
+    background-image: url('../../ajedrez_tablas/images/tablero/horizontal.png');
+}
+
+.vertical-bg {
+    background-image: url('../../ajedrez_tablas/images/tablero/vertical.png');
+}
+
+.square.white {
+    background-image: url('../../ajedrez_tablas/images/tablero/blanco.png');
+}
+
+.square.black {
+    background-image: url('../../ajedrez_tablas/images/tablero/negro.png');
+}
+
+.square img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
+
+.square img:hover {
+    transform: scale(1.15);
+}
+
+.corner-top-left, .label-top-left {
+    background-image: url('../../ajedrez_tablas/images/tablero/arribaIzquierda.png');
+}
+
+.corner-top-right, .label-top-right {
+    background-image: url('../../ajedrez_tablas/images/tablero/arribaDerecha.png');
+}
+
+.corner-bottom-left, .label-bottom-left {
+    background-image: url('../../ajedrez_tablas/images/tablero/abajoIzquierda.png');
+}
+
+.corner-bottom-right, .label-bottom-right {
+    background-image: url('../../ajedrez_tablas/images/tablero/abajoDerecha.png');
+}
+
+.footer-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-content a {
+    color: #3b2f2f;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.footer-content a:hover {
+    color: #000;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    box-shadow: 0 4px 15px rgba(56,189,248,0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(56,189,248,0.6);
+}
+
+@media (max-width: 600px) {
+    .floating-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}

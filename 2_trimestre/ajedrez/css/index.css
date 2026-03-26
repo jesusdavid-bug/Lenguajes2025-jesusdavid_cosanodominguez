@@ -1,0 +1,102 @@
+:root {
+    --color-fondo-pagina: #1a202c;
+    --color-fondo-tarjeta: #2d3748;
+    --color-texto-titulo: #e2e8f0;
+    --color-texto-cuerpo: #cbd5e0;
+    --color-acento-principal: #38b2ac;
+    --color-acento-hover: #319795;
+    --ancho-maximo: 1000px;
+    --radio-borde: 8px;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--color-fondo-pagina);
+    background-image: none;
+    color: var(--color-texto-cuerpo);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+main, .container { 
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: var(--color-texto-titulo);
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: normal;
+    border-left: 5px solid var(--color-acento-principal);
+    padding-left: 20px;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: var(--color-acento-principal);
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding-left: 25px;
+    font-weight: 400;
+}
+
+.links-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.links-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: none;
+    height: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--color-fondo-tarjeta);
+    color: var(--color-texto-titulo);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radio-borde);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: var(--sombra-suave);
+}
+
+.links-container a:hover {
+    background-color: var(--color-acento-principal);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-acento-principal);
+}
+
+hr {
+    width: 100%;
+    margin: 60px 0; 
+    border: 0; 
+    border-top: 1px solid var(--color-fondo-tarjeta);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--color-texto-cuerpo);
+    font-size: 0.85em;
+    padding: 20px 0;
+    border-top: none;
+    opacity: 0.6;
+}
